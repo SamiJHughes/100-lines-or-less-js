@@ -1,4 +1,4 @@
-var Abr, statesname, restart, renderer, map, featureLayer1, featureLayer2,mm=4;
+var recordid, argos, js, restart, renderer, map, featureLayer1, featureLayer2,mm=4;
 var block = [0, 19, 29, 45, 21, 39, 7, 32, 30, 8, 20, 38, 46, 48, 35, 2, 11];
 var bomb = [], sadd = [], renderer1, renderer2, clean=[];
 var link = [[],[1,9,10,24,42],[],[3,5,6,28,31,44],[4,18,24,25,36,42,43],[5,37,28,3],
@@ -31,14 +31,14 @@ Map, FeatureLayer, InfoTemplate, SimpleLineSymbol, SimpleFillSymbol, TextSymbol,
     function addFeatureLayer()
     {   Abr = document.getElementById("abr").outerText.split(",");
         statesname = document.getElementById("statesname").outerText.split(",");
-        featureLayer1 = new FeatureLayer("http://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS" +
-        "/rest/services/USA_States_Generalized/FeatureServer/0",
-        { mode: FeatureLayer.MODE_ONDEMAND, outFields: ["STATE_NAME","STATE_ABBR","SUB_REGION"]});
-        featureLayer2 = new FeatureLayer("http://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS" +
-        "/rest/services/USA_States_Generalized/FeatureServer/0",
-        { mode: FeatureLayer.MODE_ONDEMAND, outFields: ["STATE_NAME","STATE_ABBR","SUB_REGION"]});
-        renderer1 = new UniqueValueRenderer(defaultSymbol1, "STATE_ABBR");
-        renderer2 = new UniqueValueRenderer(defaultSymbol2, "STATE_ABBR");
+        featureLayer1 = new FeatureLayer("https://prodwin30559.bc.jsplc.net/server" +        
+                                         "/rest/services/Hosted/Sainsburys_Estate/FeatureServer/0",
+        { mode: FeatureLayer.MODE_ONDEMAND, outFields: ["recordid","argos","js"]});
+        featureLayer2 = new FeatureLayer("https://prodwin30559.bc.jsplc.net/server" +
+        "/rest/services/Hosted/Sainsburys_Estate/FeatureServer/0",
+        { mode: FeatureLayer.MODE_ONDEMAND, outFields: ["recordid","argos","js"]});
+        renderer1 = new UniqueValueRenderer(defaultSymbol1, "recordid");
+        renderer2 = new UniqueValueRenderer(defaultSymbol2, "recordid");
         featureLayer1.setRenderer(renderer1);
         featureLayer2.setRenderer(renderer2);
         map.addLayer(featureLayer2);
