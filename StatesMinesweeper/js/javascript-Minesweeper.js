@@ -1,4 +1,4 @@
-var Abr, statesname, restart, renderer, map, featureLayer1, featureLayer2,mm=4;
+var recordid, argos, js, restart, renderer, map, featureLayer1, featureLayer2,mm=4;
 var block = [0, 19, 29, 45, 21, 39, 7, 32, 30, 8, 20, 38, 46, 48, 35, 2, 11];
 var bomb = [], sadd = [], renderer1, renderer2, clean=[];
 var link = [[],[1,9,10,24,42],[],[3,5,6,28,31,44],[4,18,24,25,36,42,43],[5,37,28,3],
