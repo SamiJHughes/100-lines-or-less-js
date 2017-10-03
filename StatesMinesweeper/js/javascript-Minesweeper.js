@@ -32,10 +32,10 @@ Map, FeatureLayer, InfoTemplate, SimpleLineSymbol, SimpleFillSymbol, TextSymbol,
     {   Abr = document.getElementById("abr").outerText.split(",");
         statesname = document.getElementById("statesname").outerText.split(",");
         featureLayer1 = new FeatureLayer("https://prodwin30559.bc.jsplc.net/server" +        
-                                         "/rest/services/Hosted/Sainsburys_Estate/FeatureServer",
+                                         "/rest/services/Hosted/Sainsburys_Estate/FeatureServer/0",
         { mode: FeatureLayer.MODE_ONDEMAND, outFields: ["recordid","argos","js"]});
         featureLayer2 = new FeatureLayer("https://prodwin30559.bc.jsplc.net/server" +
-        "/rest/services/Hosted/Sainsburys_Estate/FeatureServer",
+        "/rest/services/Hosted/Sainsburys_Estate/FeatureServer/0",
         { mode: FeatureLayer.MODE_ONDEMAND, outFields: ["recordid","argos","js"]});
         renderer1 = new UniqueValueRenderer(defaultSymbol1, "recordid");
         renderer2 = new UniqueValueRenderer(defaultSymbol2, "recordid");
